@@ -2,3 +2,26 @@ export interface Stock {
     symbol: string;
     name: string;
 }
+
+export interface StockResult {
+    v: number;
+    vw: number;
+    o: number;
+    c: number;
+    h: number;
+    l: number;
+    t: number;
+    n: number;
+}
+export interface StockData {
+    ticker: string;
+    queryCount: number;
+    resultsCount: number;
+    adjusted: boolean;
+    results: StockResult[];
+    status: string;
+    request_id: string;
+    count: number;
+}
+
+  
