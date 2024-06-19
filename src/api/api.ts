@@ -4,7 +4,7 @@ export const fetchStockData = async (stock: string) => {
     //beging date six months ago format will be 2024-05-01
 
     const tod = new Date(); 
-    tod.setMonth(tod.getMonth() - 6);
+    tod.setMonth(tod.getMonth() - 12);
     const sixMonthsAgo = tod.toISOString().split('T')[0];
     console.log(sixMonthsAgo);
 
