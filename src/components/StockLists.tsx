@@ -3,9 +3,11 @@ import { stocks } from "../data/stocks";
 import { Stock } from "../types";
 import { useStock } from "../context/StockContext";
 import LabelButtonProps from "./Labels/LabelButtonProps";
+import "../styles/scrollbar.css";
+
 const StockLists = () => {
   const { selectedStock, setSelectedStock } = useStock();
-  const topFiveStock = stocks.slice(0, 5);
+  const topFiveStock = stocks.slice(0, 10);
   const handleClick = async (stock: string) => {
     setSelectedStock(stock);
     console.log("Selected Stock: ", stock);
@@ -19,13 +21,15 @@ const StockLists = () => {
     }
   };
   return (
-    <div>
-      <ul>
+    <div className="flex w-full overflow-x-scroll  items-center h-24  scrollbar-hidden">
+      <ul className="flex">
         {topFiveStock.map((stock: Stock) => (
-          <LabelButtonProps
-            label={stock.name}
-            onClick={() => handleClick(stock.symbol)}
-          />
+          <li key={stock.symbol} className="flex-shrink-0">
+            <LabelButtonProps
+              label={stock.name}
+              onClick={() => handleClick(stock.symbol)}
+            />
+          </li>
         ))}
       </ul>
     </div>

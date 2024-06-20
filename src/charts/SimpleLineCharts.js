@@ -53,7 +53,7 @@ const SimpleLineCharts = (stockData) => {
     }
   }, [stockData]);
   if (data.length === 0) {
-    return <div>Loading...</div>;
+    return <div>Chart is loading</div>;
   }
   return (
     <div style={{ width: "100%", height: 300 }}>

@@ -1,3 +1,5 @@
+import { NewsApiResponse } from "../types";
+
 const apiKeys = process.env.REACT_APP_API_KEY;
 
 export const fetchStockData = async (stock: string) => {
@@ -24,4 +26,21 @@ export const fetchStockData = async (stock: string) => {
     console.error('Failed to fetch stock data', error);
     return [];
 }
+};
+
+export const fetchStockNews = async (limit: number = 10): Promise<NewsApiResponse> => {
+    const BASE_URL = 'https://api.polygon.io/v2/reference/news';
+    const response = await fetch(`${BASE_URL}?limit=${limit}`, {
+        headers: {
+            Authorization: `Bearer ${apiKeys}`,
+        },
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch news');
+    }
+
+    const data = await response.json();
+    return data;
+
 };

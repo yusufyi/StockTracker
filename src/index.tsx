@@ -4,15 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StockProvider } from "./context/StockContext";
+import { SearchPopupProvider } from "./context/StockContext";
+import { AuthProvider } from "./context/AuthContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <StockProvider>
-      <App />
-    </StockProvider>
+    <AuthProvider>
+      <StockProvider>
+        <SearchPopupProvider>
+          <App />
+        </SearchPopupProvider>
+      </StockProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

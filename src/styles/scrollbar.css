@@ -1,0 +1,14 @@
+/* src/styles/scrollbar.css */
+.scrollbar-hidden {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  
+    /* Hide scrollbar for other browsers */
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+  

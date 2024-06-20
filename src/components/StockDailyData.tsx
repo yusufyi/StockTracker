@@ -46,16 +46,17 @@ export const StockDailyData = () => {
     return <div>No data</div>;
   }
   return (
-    <div>
-      <h1>{stockData.symbol}</h1>
-      <p>Date: {stockData.from}</p>
-      <p>Open: {stockData.open}</p>
-      <p>High: {stockData.high}</p>
-      <p>Low: {stockData.low}</p>
-      <p>Close: {stockData.close}</p>
-      <p>Volume: {stockData.volume}</p>
-      <p>After Hours: {stockData.afterHours}</p>
-      <p>Pre Market: {stockData.preMarket}</p>
+    <div className="flex flex-col  items-start p-4 text-sm divide-y w-full  ">
+      <h2 className="w-full font-bold"> Stock Market Data</h2>
+      <h1 className="w-full">{stockData.symbol}</h1>
+      <p className="w-full">Date: {stockData.from}</p>
+      <p className="w-full">Open: {stockData.open}</p>
+      <p className="w-full">High: {stockData.high}</p>
+      <p className="w-full">Low: {stockData.low}</p>
+      <p className="w-full">Close: {stockData.close}</p>
+      <p className="w-full">Volume: {stockData.volume}</p>
+      <p className="w-full">After Hours: {stockData.afterHours}</p>
+      <p className="w-full">Pre Market: {stockData.preMarket}</p>
     </div>
   );
 };

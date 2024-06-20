@@ -13,7 +13,7 @@ const LabelButtonProps: React.FC<LabelButtonPropsProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`bg-gray-50 text-black w-48 m-4 px-4 py-2 rounded-full hover:bg-slate-200 ${className}`}
+      className={`bg-gray-50 text-black  m-4 px-4 py-2 rounded-full hover:bg-slate-200 ${className}`}
     >
       {label}
     </button>
